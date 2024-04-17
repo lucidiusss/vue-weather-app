@@ -43,7 +43,7 @@ const options1 = {
       </div>
     </div>
     <div class="forecast">
-      <h1>7 Days Forecast</h1>
+      <h1>3 Days Forecast</h1>
       <div class="forecast__weather">
         <div
           class="forecast__weather__day"

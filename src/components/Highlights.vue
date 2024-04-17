@@ -1,6 +1,5 @@
 <script setup>
 import { Icon } from '@iconify/vue'
-import { ref } from 'vue'
 
 defineProps({
   currentWeather: Object
@@ -96,7 +95,7 @@ defineProps({
   </div>
   <h1 class="today_at">Today at</h1>
   <div class="hourly">
-    <div class="hour" v-for="hour in currentWeather.forecast?.forecastday[0].hour" :key="hour">
+      <div class="hour" v-for="hour in currentWeather.forecast?.forecastday[0].hour" :key="hour">
       <p>{{ new Date(hour.time).getHours() }}:00</p>
       <img :src="hour.condition.icon" alt="" />
       <p>{{ Math.round(hour.temp_c) }}°C</p>
@@ -369,8 +368,10 @@ defineProps({
 .hourly {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   align-items: center;
   gap: 25px;
+  padding: 25px 0;
 
   .hour {
     width: 100px;
@@ -741,11 +742,12 @@ defineProps({
   .hourly {
     flex-wrap: nowrap;
     overflow-x: scroll;
-    padding: 25px;
+    overflow-y: hidden;
+    width: 100%;
   }
 
   .highlights {
-    width: 99%;
+    width: 100%;
 
     .highlights__main_section {
       gap: 10px;

@@ -26,7 +26,7 @@ onMounted(async () => {
   try {
     await axios
       .get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_API_KEY}&q=London&days=7&aqi=yes&alerts=yes`
+        `https://api.weatherapi.com/v1/forecast.json?key=${import.meta.env.VITE_API_KEY}&q=London&days=7&aqi=yes&alerts=yes`
       )
       .then((res) => {
         currentWeather.value = res.data
